@@ -1,57 +1,79 @@
 El objetivo es desarrollar una aplicación para gestionar el stock de diferentes almacenes.
 Como usuario quiero consultar y gestionar los diferentes almacenes.
 Además debo poder añadir nuevas mercancías a dichos almacenes y gestionar pedidos para consumir dichos productos.
-Dejamos de tu lado las decisiones técnicas, el único requisito es que el backend esté hecho en python (puedes elegir el framework que quieras) y que el front sea web.
+Dejamos de tu lado las decisiones técnicas, el único requisito es que el backend esté hecho en python (puedes elegir el
+framework que quieras) y que el front sea web.
 
 ## Suposiciones:
-* Un producto puede estar en un solo alamacén
+
+* Un producto puede estar en un solo almacén
 * Cada linea de pedido hace referencia a un solo producto
+* No se pueden consumir mas productos que su stock en almacén
+* No se pudden añadir mas productos si se completa la capacidad del alamacén
 
 # Models:
+
 ## Warehouse
-### location
-### capacity
-### current_inventory
-### products (Reversed)
+
+* location
+* capacity
+* current_inventory (property)
+* products (Reversed)
 
 ## Product
-### name
-### sku
-### ean
-### stock
-### warehouse (Foreign)
-### order_lines (Reversed)
+* name
+* sku
+* ean
+* stock
+* warehouse (Foreign)
 
-## Orders
-### status
-### stock:bool
-### lines  (Reversed)
+## Orders (Para consumir productos)
+* status
+* order_lines  (Reversed)
 
-## Line
-### product (Foreign)
-### order  (Foreign)
-### quantity
+## OrderLine
+* product (Foreign)
+* order (Foreign)
+* quantity
+
+## Restock (para añadir nuevas mercancias)
+* status
+* restock_lines  (Reversed)
+
+## RestockLine
+* product (Foreign)
+* order (Foreign)
+* quantity
 
 # Installation
 
 ### Dependencies
-![Python](https://img.shields.io/badge/Python-3.9.2-greenyellow)
-![Docker](https://img.shields.io/badge/Docker-3.9.2-blue)
-![Django](https://img.shields.io/badge/Django-4.1.1-darkgreen)
 
-Clone the repo 
+![Python](https://img.shields.io/badge/Python-3.9.6-greenyellow)
+![Docker](https://img.shields.io/badge/Docker-3.9.2-blue)
+![Django](https://img.shields.io/badge/Django-4.1.4-darkgreen)
+![DjangoRestFramework](https://img.shields.io/badge/DjangoRestFramwork-3.13.1-darkred)
+
+To clone the repository
+
 ```sh
 git clone git@github.com:djimenezp/MymeSnippetTest.git .
 ```
-For use in non-production environment 
+
+To use in non-production environment
+
 ```sh
 docker-compose up -d --build
 ```
+
 Server url will be at http://localhost:8000/
+
 Browsable Api will be at http://localhost:8000/api
+
 Swagger doc will be at http://localhost:8000/swagger
 
-For run the tests
+To run the tests
+
 ```sh
 docker-compose exec web python manage.py test
 ```
