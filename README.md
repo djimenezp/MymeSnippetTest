@@ -43,15 +43,15 @@ Clone the repo
 ```sh
 git clone git@github.com:djimenezp/MymeSnippetTest.git .
 ```
-For non-production environment 
+For use in non-production environment 
 ```sh
 docker-compose up -d --build
 ```
-Server url will be in http://localhost:8000/
+Server url will be at http://localhost:8000/
+Browsable Api will be at http://localhost:8000/api
+Swagger doc will be at http://localhost:8000/swagger
 
-For production environment
+For run the tests
 ```sh
-docker-compose -f docker-compose.prod.yml up -d --build
-docker-compose -f docker-compose.yml exec web python manage.py migrate --noinput --settings project.prod
+docker-compose exec web python manage.py test
 ```
-Server url will be in http://localhost/

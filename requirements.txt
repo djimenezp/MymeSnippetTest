@@ -1,2 +1,4 @@
+wheel~=0.38.4
 Django~=4.1.4
-djangorestframework~=3.14.0
+djangorestframework~=3.13.1
+drf_yasg~=1.21.4

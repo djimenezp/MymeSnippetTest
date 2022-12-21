@@ -1,0 +1,13 @@
+**/node_modules
+**/build
+__pycache__
+*.pyc
+venv/
+db.sqlite3
+.gitignore
+.idea
+*.log
+.git
+.dockerignore
+*.bat
+media/
