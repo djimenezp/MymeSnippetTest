@@ -42,7 +42,7 @@ class RestockLineAdmin(Default):
 
 
 class RestockLineInline(admin.TabularInline):
-    model = models.OrderLine
+    model = models.RestockLine
 
 
 @admin.register(models.Restock)
