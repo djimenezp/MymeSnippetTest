@@ -21,16 +21,32 @@ class ProductAdmin(Default):
 
 
 @admin.register(models.OrderLine)
-class LineAdmin(Default):
+class OrderLineAdmin(Default):
     pass
 
 
-class LineInline(admin.TabularInline):
+class OrderLineInline(admin.TabularInline):
     model = models.OrderLine
 
 
 @admin.register(models.Order)
 class OrderAdmin(Default):
     inlines = [
-        LineInline,
+        OrderLineInline,
+    ]
+
+
+@admin.register(models.RestockLine)
+class RestockLineAdmin(Default):
+    pass
+
+
+class RestockLineInline(admin.TabularInline):
+    model = models.OrderLine
+
+
+@admin.register(models.Restock)
+class RestockAdmin(Default):
+    inlines = [
+        RestockLineInline,
     ]
