@@ -68,8 +68,15 @@ Browsable Api will be at http://localhost:8000/api
 
 Swagger doc will be at http://localhost:8000/swagger
 
+Django admin will be at http://localhost:8000/admin
+
 To run the tests
 
 ```sh
 docker-compose exec web python manage.py test
+```
+To add an user for the django admin
+
+```sh
+docker-compose exec web python manage.py createsuperuser
 ```
