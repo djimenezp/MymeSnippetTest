@@ -53,7 +53,7 @@ framework que quieras) y que el front sea web.
 To clone the repository
 
 ```sh
-git clone git@github.com:djimenezp/MymeSnippetTest.git .
+git clone git@github.com:djimenezp/WharehouseDjangoTest.git .
 ```
 
 To use in non-production environment
