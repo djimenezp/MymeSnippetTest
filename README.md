@@ -1,4 +1,4 @@
-# MIME/SNIPPET TEST
+# Wharehouse TEST
 El objetivo es desarrollar una aplicación para gestionar el stock de diferentes almacenes.
 Como usuario quiero consultar y gestionar los diferentes almacenes.
 Además debo poder añadir nuevas mercancías a dichos almacenes y gestionar pedidos para consumir dichos productos.
